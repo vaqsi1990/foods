@@ -99,8 +99,8 @@ app.use(cookieParser())
     });
   })
   
-app.use('/', (req, res) => {
-  res.send('working')
+app.get("/*", function (req, res) {
+   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 })
 
   mongoose
